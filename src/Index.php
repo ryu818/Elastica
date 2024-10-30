@@ -217,6 +217,8 @@ class Index implements SearchableInterface
                 'retry_on_conflict',
                 'routing',
                 'timeout',
+                'if_primary_term',
+                'if_seq_no',
             ]
         );
 
