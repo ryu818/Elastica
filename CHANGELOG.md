@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Added bucket sort aggregation [#2229](https://github.com/ruflin/Elastica/pull/2229)
 
 ### Changed
+* Add support for Search Option "seq_no_primary_term" and Index Options "if_primary_term" and "if_seq_no" [#2234](https://github.com/ruflin/Elastica/pull/2234)
 
 ### Deprecated
 
