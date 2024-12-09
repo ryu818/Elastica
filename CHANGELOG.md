@@ -25,10 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 * Add support for Search Option "seq_no_primary_term" and Index Options "if_primary_term" and "if_seq_no" [#2234](https://github.com/ruflin/Elastica/pull/2234)
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 * Fixed Pipeline Processor handling to allow for multiple processors of the same type [#2218](https://github.com/ruflin/Elastica/pull/2218)
 
