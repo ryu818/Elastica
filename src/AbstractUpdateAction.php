@@ -470,6 +470,8 @@ class AbstractUpdateAction extends Param
     }
 
     /**
+     * array_filterはデフォルトで値がfalseと評価されるものを除外するため、if_seq_noの値が0の場合は除外される。そのため除外しないように修正
+     *
      * @param array $fields if empty array all options will be returned
      *
      * @return array
@@ -477,9 +479,24 @@ class AbstractUpdateAction extends Param
     public function getOptions(array $fields = [])
     {
         if ($fields) {
+            return array_filter(
+                array_intersect_key($this->getParams(), array_flip($fields)),
+                function ($value) {
+                    return $value !== null; // nullのみ除外し、0は含める
+                }
+            );
+        }
+
+        return array_filter($this->getParams(), function ($value) {
+            return $value !== null; // nullのみ除外し、0は含める
+        });
+    }
+    /*public function getOptions(array $fields = [])
+    {
+        if ($fields) {
             return \array_filter(\array_intersect_key($this->getParams(), \array_flip($fields)));
         }
 
         return \array_filter($this->getParams());
-    }
+    }*/
 }
